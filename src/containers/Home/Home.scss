@@ -1,0 +1,66 @@
+
+// Contenido total de la pagina
+
+.Contenedor{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+
+}
+
+
+
+// Estilo de cada genero
+
+.genero{
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 20em;
+}
+
+.tituloDelGenero{
+    
+    margin-left: -61em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: orange;
+   // border: black solid 0.05em;
+    width: 20em;
+    height: 2em;
+    border-radius: 2em;
+    
+    
+}
+
+
+// barra separadora
+
+.Separacion{
+
+  
+    width: 60vw;
+    height: 0.05em;
+    background-color: grey;
+}
+
+.cardMovies{
+
+    width: 90vw;
+    height: 16em;
+    border: 0.1em solid orange ;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+
+
+//footer

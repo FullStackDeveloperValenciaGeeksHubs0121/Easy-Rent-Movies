@@ -1,0 +1,47 @@
+.vistaHeader{
+    width:100vw;
+    height: 7em;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo{
+    width: 14em;
+    height: 7em;
+    border-radius: 2em;
+}
+.loginRegister{
+    margin-left: 54em;
+    margin-top: 3em;
+    width: 13em;
+    height: 2.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}  
+    
+.login {
+    margin: 0.5em;
+    border-radius: 2em;
+    border: 0.2px black solid;
+    width: 6em;
+    height: 2em;
+    background-color: orange;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register{
+    border-radius: 2em;
+    border: 0.2px black solid;
+    width: 6em;
+    height: 2em;
+    background-color: orange;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
