@@ -4,16 +4,16 @@ import './Header.scss';
 import logo from '../../img/logo.jpg'
 
 const Header = (props)=>{
-    let home = true
+    let home=1;
 
-    if( home= true){
+    if( home=== 1){
 
         return(
               
             <div className="vistaHeader">
 
                 <div className="logo">
-                    <img  className="logo" src={logo}/>
+                    <img  className="logo" src={logo} alt="."/>
                 </div>
 
                 <div className="nav">

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-
+import React, { useEffect,useState } from 'react';
+import Movie from '../Movie/Movie';
 //import '../../Global.scss';
 //import {connect} from 'react-redux';
 import Header from '../../components/Header/Header';
@@ -8,55 +8,30 @@ import axios from 'axios';
 
 const Home = (props)=>{
 
-   
+
+   //Hooks
+
+   const [movie,setMovie]= useState([])
+
+useEffect(()=>{
+
+let LatestMoviesEndpoint = "https://api.themoviedb.org/3/movie/now_playing?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=1";
 
 
-   useEffect(()=>{
-console.log('Estoy aqui en el component didmount')
 
-   },[])
+  fetch(LatestMoviesEndpoint)
+  .then(res =>(res.json()))
+  .then(data =>{
+     console.log(data)
+     setMovie(data.results)
+  })
 
-   useEffect(()=>{
-
-console.log('Ahora estoy aqui en el didupdate')
-   },[])
+},[]);
 
 
-  
-// Traer las peliculas de TMdb
 
-  let bringMe = async ()=>{
-   
-   let LatestMoviesEndpoint = "https://api.themoviedb.org/3/movie/now_playing?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=1";
 
-    let res = await axios.get(LatestMoviesEndpoint);
-    let datos = res.data.results;
-    console.log(datos);
-    
-    
-    datos.forEach(element => {
-      
-         
-         let titulo = document.getElementById('1'); 
-        
-        const render =()=>{
-           titulo.innerHTML += <div className="titulo">{JSON.stringify(element.title)}</div>;
-           titulo.innerHTML += <img src={`https://image.tmdb.org/t/p/original${JSON.stringify(element.poster_path)}`} alt="."></img>
-           console.log(element.title);
-           console.log(element.poster_path);
-   
 
-        }
-        render();
-         
-          
-       }
-       
-    );
-    
-
-  }
-  bringMe();
     
      return(
          
@@ -66,55 +41,26 @@ console.log('Ahora estoy aqui en el didupdate')
            <Header/>
            <div className="Contenedor">
                <div className="genero">
-               <div className="tituloDelGenero" >
-               <h2 className="h2">Fantasia</h2>
+                <div className="cardMovies" id="1">
+               {movie.map(movie=> <Movie key={movie.id} {...movie}/>)}
                </div>
-               <div className="cardMovies" id="1">
-                
-                
-               </div>
-               <div className="Separacion"></div>
-               </div>
-               
-               <div className="genero">
-                <div className="tituloDelGenero">   
-               <h2 className="h2">Ciencia-Ficción/Actión</h2>
-               </div>
-               <div className="cardMovies"></div>
-               <div className="Separacion"></div>
-               </div>
-               <div className="genero">
-               <div className="tituloDelGenero">   
-               <h2 className="h2">Latest</h2>
-               </div>
-               <div className="cardMovies"></div>
-               <div className="Separacion"></div>
-               </div>
-               <div className="genero">
-               <div className="tituloDelGenero">   
-               <h2 className="h2">Policiacas</h2>
-               </div>
-               <div className="cardMovies"></div>
-               <div className="Separacion"></div>
-               </div>
-               <div className="genero">
-               <div className="tituloDelGenero">   
-               <h2 className="h2">Infantil</h2>
-               </div>
-               <div className="cardMovies"></div>
-               <div className="Separacion"></div>
-               </div>
-               <div className="genero">
-               <div className="tituloDelGenero">   
-               <h2 className="h2">Terror</h2>
-               </div>
-               <div className="cardMovies"></div>
-               <div className="Separacion"></div>
-               </div>
-               
-            </div>
+           </div>
 
-         </div>   
+           <div className="presentacion">
+           <h2 className="h2">Tenemos Una Gran Variedad De Peliculas </h2>
+           <p className="p">«SABEMOS QUE TE ENCATA VER PELICULAS, EASY-MOVIE-RENT TE ACERCA EL CINE A TU CASA,O DONDE QUIERA QUE ESTES!»</p>
+
+           </div>
+           </div>  
+           <footer className="footer">
+              <div className="copyright">Copyright</div>
+              <div className="direccion">Calle Salamanca 24-25-66 460041 Valenia Spain</div>
+              <div className="autor">
+                 <div className="github"></div>
+                 <div className="link"></div>
+              </div>
+           </footer>
+        </div>    
     )
     
 }
