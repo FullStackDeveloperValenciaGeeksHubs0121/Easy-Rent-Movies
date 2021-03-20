@@ -32,7 +32,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    color: orange;
+    color: rgb(44, 191, 228);
    // border: black solid 0.05em;
     width: 20em;
     height: 2em;
@@ -53,13 +53,25 @@
 }
 
 .cardMovies{
-
+    
     width: 90vw;
     height: 16em;
     border: 0.1em solid orange ;
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    justify-content: space-evenly;
     overflow-x: scroll;
+}
+.MovieCard{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+justify-content: space-evenly;
+    width: 12em;
+    height: 12em;
+    
 }
 
 

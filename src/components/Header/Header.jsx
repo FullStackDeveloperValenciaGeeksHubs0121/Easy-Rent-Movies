@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.scss';
-import easyRentMovies from '../../img/easyrentmovies.jpg';
+
+import logo from '../../img/logo.jpg'
 
 const Header = (props)=>{
     let home = true
@@ -12,13 +13,20 @@ const Header = (props)=>{
             <div className="vistaHeader">
 
                 <div className="logo">
-                    <img  className="logo" src={easyRentMovies}/>
+                    <img  className="logo" src={logo}/>
                 </div>
 
-                <div className="loginRegister">
-                <div className="login">Login</div>
-                <div className="register">Register</div>
+                <div className="nav">
+                <div className="inicio">INICIO</div>
+                <div className="directorioPelis">DIRECTORIO ANIME</div>
+                <div >
+                   <input className="search" type="text" placeholder=" Busqueda..."/>
                 </div>
+                
+                <div className="login">LOGIN</div>
+
+                </div>
+              
                 
                 
             </div>
