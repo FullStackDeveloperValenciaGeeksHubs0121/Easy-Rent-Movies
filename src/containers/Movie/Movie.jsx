@@ -8,10 +8,10 @@ const Movie =({title,poster_path,overview,release_date,vote_average}) =>{
 
 
     return(
-        <div>
+        <div className="container">
             <img className = "movieCard" src={FirstPartOflinkimage+poster_path} alt={title}/>
             <h3>{title}</h3>
-            <span>{vote_average}</span>
+            
         </div>
     )
 }

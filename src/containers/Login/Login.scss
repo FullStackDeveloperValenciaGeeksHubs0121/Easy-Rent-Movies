@@ -1,0 +1,36 @@
+.loginContainer{
+
+    display: flex;
+    width: 100vw;
+    height: 34em;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.Login{
+    margin-top: -5em;
+   
+    width: 22em;
+    height: 22em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+}
+.Register{
+    margin-top: -5em;
+
+    width: 22em;
+    height: 22em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.separador{
+    width: 0.05em;
+    height: 28em;
+    background-color: black;
+    margin: 1em;
+}

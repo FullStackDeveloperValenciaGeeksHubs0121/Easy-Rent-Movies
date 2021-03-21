@@ -4,6 +4,7 @@ import {BrowserRouter, Switch,Route} from 'react-router-dom';
 import Home from './containers/Home/Home';
 import Register from './containers/Register/Register';
 import Login from './containers/Login/Login';
+import Peliculas from './containers/Directorio-peliculas/Peliculas';
 
 function App() {
   return (
@@ -14,9 +15,9 @@ function App() {
       
        <Switch>
           <Route path="/" exact component={Home}/>
-          <Route path='/Login' exact component={Login}/>
-          <Route path="/Register" exact component={Register}/>
-         {/* <Route path="/Profile" exact component={Profile}/>*/}
+          <Route path='/login' exact component={Login}/>
+          <Route path="/register" exact component={Register}/>
+          <Route path="/peliculas" exact component={Peliculas}/>
 
        </Switch>
 

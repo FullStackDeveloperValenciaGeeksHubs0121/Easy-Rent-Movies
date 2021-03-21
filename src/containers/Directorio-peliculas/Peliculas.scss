@@ -1,0 +1,39 @@
+.contaniner{
+    width: 100vw;
+    height: 100vh;
+    display:flex ;
+    flex-direction: column;
+    background-color: rgb(68, 64, 64);
+
+       .contenido{
+           display: flex;
+           flex-direction: row;
+           width: 90%;
+           height: 100%;
+           background-color: rgb(17, 16, 16);
+           margin-left: 4em;
+           justify-content: center;
+           align-items: center;
+
+           .showMovies{
+               display: flex;
+               flex-direction: wrap;
+               width: 68%;
+               height: 100%;
+           }
+
+           .separador{
+               
+               height: 95%;
+               border: 1px rgb(189, 180, 180) solid;
+               
+           }
+           .findMovies{
+               display: flex;
+               flex-direction: column;
+               width: 30%;
+               height: 100%;
+           }
+       }
+
+}

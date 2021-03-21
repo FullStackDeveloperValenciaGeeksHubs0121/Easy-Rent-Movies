@@ -15,7 +15,7 @@
 .nav{
    
     margin-left: 32em;
-    margin-top: 1.5em;
+    margin-top: 1em;
     width: 38em;
     height: 2.5em;
     display: flex;
@@ -28,6 +28,12 @@
 
 .inicio{
     margin: 1em;
+    transition: 0.5s;
+}
+.inicio:hover{
+  
+    color: rgb(44, 191, 228);
+    transition: 0.5s;
 }
 .search{
     margin: 1em;
@@ -36,9 +42,20 @@
     height: 2em;
     border-radius: 2em;
     background-color: white;
+    transition: 1s;
+}
+.search:hover{
+    background-color: rgb(195, 203, 209);
+    border: 0.2em solid rgb(21, 33, 36);
+    transition: 1s;
 }
 .directorio{
     margin: 1em;
+}
+.directorio:hover{
+  
+    color: rgb(44, 191, 228);
+    transition: 0.5s;
 }
     
 .login {
@@ -52,6 +69,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.login:hover{
+     border: 0.2em solid rgb(21, 33, 36);
+     background-color: rgb(195, 203, 209);
+     color: white;
+     transition: 0.5s;
 }
 .register{
     border-radius: 2em;
