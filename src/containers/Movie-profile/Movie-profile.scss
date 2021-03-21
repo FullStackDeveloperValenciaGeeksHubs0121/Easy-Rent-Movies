@@ -4,9 +4,71 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    background-color: rgb(110, 103, 103);
+
+    align-items:center;
 }
 .contenidoMProfile{
-
+    width: 90vw;
+    height: 90vh;
     display: flex;
+    border: 0.05em solid rgb(110, 106, 106);
+    background-color: black;
     
+}
+
+.movie{
+    width: 80vh;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.poster{
+    margin-top: 1em;
+    width: 20em;
+    height: 25em;
+    border-radius: 2em;
+      //  border: 0.01em solid gray;
+}
+.posterTitleRate{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    width: 22em;
+    height: 30em;
+  //  border: gray solid 0.05em;
+
+}
+.titleAndRate{
+    width: 22em;
+    height: 5em;
+    display: flex;
+    flex-direction: row;
+   // border: 0.01em solid gray;
+    
+}
+.titleProfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17em;
+    height: 5em;
+    //border: 0.01em solid gray;
+    color:rgb(236, 226, 226);
+    font-size: 1.2em;
+}
+.rateProfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5em;
+    height: 5em;
+    //border: 0.01em solid gray;
+    color: rgb(236, 226, 226);
+    font-size: 1.2em;
 }
