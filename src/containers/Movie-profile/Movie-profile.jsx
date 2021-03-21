@@ -18,9 +18,14 @@ const MProfile =()=>{
         <div className='contenedorMProfile'>
 
           <Header/>
+          
           <div className="contenidoMProfile">
+         
+
             <div className="movie">
+            
               <div className="posterTitleRate">
+              
                 <div className="poster">
                   <img  className='poster' src={link+datosMovie.poster_path} alt={datosMovie.tite}/>
                 </div>
@@ -34,14 +39,21 @@ const MProfile =()=>{
                 </div>
               </div>
               <div className="descriptionAndMore">
-                <div className="description"></div>
-                <div className="genre"></div>
+                <button className="addTocard">AÑADIR A MI CARRITO</button>
+                <div className="genre"><h1 className='h1Profile'>{datosMovie.original_title}</h1></div>
+                <h2 className='h2Profile'>Sinopsis:</h2>
+                <div className="description"><br/>
+                {datosMovie.overview}</div>
+                
                 
               </div>
+
             
           </div>  
+        
           </div>
-          
+          <div className="separadorProfile"></div>
+          <div className='peliculasRelacionadas'></div>
         </div>
     )
 }

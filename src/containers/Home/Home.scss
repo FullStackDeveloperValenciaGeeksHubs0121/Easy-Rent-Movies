@@ -13,13 +13,21 @@
 }
 
 .h2{
+    margin: 2em;
     font-size: 2em;
 }
-.p{
+.phome{
+    margin: 0.3em;
     font-size: 1.5em;
 
 }
+.presentacion{
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+}
 .casi{
+    margin: 2em;
     margin-left: 18em;
     width: 20em;
     height: 5em;

@@ -1,9 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 .contenedorMProfile{
 
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    width: auto;
+    height: auto;
     background-color: rgb(110, 103, 103);
 
     align-items:center;
@@ -12,13 +16,18 @@
     width: 90vw;
     height: 90vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
+   
     border: 0.05em solid rgb(110, 106, 106);
     background-color: black;
     
 }
+// movie es el contedor de la informacion de la pelicula
 
 .movie{
-    width: 80vh;
+    position: relative;
+    width: 80vw;
     height: 80vh;
     display: flex;
     flex-direction: row;
@@ -27,6 +36,19 @@
 
 }
 
+// Esta es la vista de la parte izquierda
+
+.posterTitleRate{
+    width: 20em;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    
+  //  border: gray solid 0.05em;
+
+}
 .poster{
     margin-top: 1em;
     width: 20em;
@@ -34,41 +56,99 @@
     border-radius: 2em;
       //  border: 0.01em solid gray;
 }
-.posterTitleRate{
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    align-items: center;
-    width: 22em;
-    height: 30em;
-  //  border: gray solid 0.05em;
 
-}
 .titleAndRate{
-    width: 22em;
+    width: 20em;
     height: 5em;
     display: flex;
     flex-direction: row;
    // border: 0.01em solid gray;
     
 }
-.titleProfile{
+.titleProfile{ 
+    width: 15em;
+    height: 5em;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 17em;
-    height: 5em;
+   
     //border: 0.01em solid gray;
     color:rgb(236, 226, 226);
     font-size: 1.2em;
 }
 .rateProfile{
+
+    width: 3em;
+    height: 5em;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 5em;
-    height: 5em;
+    
     //border: 0.01em solid gray;
     color: rgb(236, 226, 226);
     font-size: 1.2em;
+}
+
+// Esta es la vista de la parte derecha
+
+.descriptionAndMore{
+    width: 50em ;
+    height: 15em;
+   // border: 0.05em solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.h1Profile, .h2Profile{
+    color: rgb(236, 226, 226);
+    font-style: italic;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: 1em;
+}
+.description{
+    width: 38em;
+    height: 10em;
+   // border: gray solid 0.1em;
+    border-radius: 2em;
+    color: rgb(236, 226, 226);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+
+}
+.addTocard{
+    position: absolute;
+    all:unset;
+    width: 10em;
+    height: 3em;
+    background-color: rgb(136, 138, 238);
+    color:rgb(236, 226, 226) ;
+    margin-top: -5em;
+     
+    border-radius: 2em;
+    transition: 0.5s;
+    
+}
+.addTocard:hover{
+    transition: 0.5s;
+    background-color: turquoise;
+    color: rgb(34, 2, 2);
+
+}
+
+// la parte inferios
+
+.separadorProfile{
+    width: 20em;
+    //height: 0.01em;
+    border: 0.01em solid rgb(110, 103, 103);
+}
+.peliculasRelacionadas{
+
+    width: 90vw;
+    height: 60em;
+    background-color: black;
 }

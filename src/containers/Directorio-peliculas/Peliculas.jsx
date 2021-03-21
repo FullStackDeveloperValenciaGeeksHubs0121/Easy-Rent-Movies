@@ -35,7 +35,7 @@ const Peliculas =()=>{
 
     const takeMeTo =(movie)=>{
      
-   localStorage.setItem('movie',JSON.stringify(movie))
+     localStorage.setItem('movie',JSON.stringify(movie))
   
     history.push('/movieProfile')
  }

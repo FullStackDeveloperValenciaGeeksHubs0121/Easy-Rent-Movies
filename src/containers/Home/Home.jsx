@@ -35,6 +35,14 @@ let LatestMoviesEndpoint = "https://api.themoviedb.org/3/movie/now_playing?api_k
 //Functions:
 
    let history = useHistory();
+   const takeMeTo =(movie)=>{
+     
+      localStorage.setItem('movie',JSON.stringify(movie))
+   
+       setTimeout(()=>{history.push('/movieProfile')},500)
+     
+
+   }
    
     
      return(
@@ -46,17 +54,17 @@ let LatestMoviesEndpoint = "https://api.themoviedb.org/3/movie/now_playing?api_k
            <div className="Contenedor">
                <div className="genero">
                 <div className="cardMovies" >
-               {movie.map(movie=> <Movie key={movie.id} {...movie}/>)}
+                {movie.map(movie=> <Movie key={movie.id} {...movie} onClick={()=>takeMeTo(movie)}/>)} 
                </div>
            </div>
 
            <div className="presentacion">
            <h2 className="h2">ELIGE ENTRE UNA GRAN VERIEDAD DE PELICULAS </h2>
-           <p className="p">«SABEMOS QUE TE ENCANTA VER PELICULAS,<br/>
+           <p className="phome">«SABEMOS QUE TE ENCANTA VER PELICULAS,<br/>
             EASY-MOVIE-RENT , ACERCA EL CINE A TU CASA,O DONDE QUIERA QUE ESTES!»</p>
            <br/>
-           <p className='p'>Registrate y navega por nuestro catalogo de mas de 1000 peliculas</p>
-           <div className="casi" onClick={()=> history.push('./peliculas')}>REGISTRATE AQUI  , Y DISFRUTA DE LA EXPERIENCIA</div>
+           <p className='phome'>Registrate y navega por nuestro catalogo de mas de 1000 peliculas</p>
+           <div className="casi" onClick={()=>history.push('/login')}>REGISTRATE AQUI  , Y DISFRUTA DE LA EXPERIENCIA</div>
            </div>
            </div>  
            <footer className="footer">
