@@ -53,7 +53,7 @@ let LatestMoviesEndpoint = "https://api.themoviedb.org/3/movie/now_playing?api_k
            <Header/>
            <div className="Contenedor">
                <div className="genero">
-                <div className="cardMovies" >
+                <div className="cardMovies">
                 {movie.map(movie=> <Movie key={movie.id} {...movie} onClick={()=>takeMeTo(movie)}/>)} 
                </div>
            </div>

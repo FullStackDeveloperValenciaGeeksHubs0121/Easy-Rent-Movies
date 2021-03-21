@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
 }
-.movieCard{
+.latestMoviesCard{
    
     display: flex;
     flex-direction: column;
@@ -13,18 +13,9 @@
     margin: 1em;
     align-items: center;
     color: rgb(230, 219, 219);
-    width: 12em;
-    height: 18em;
+    width: 6em;
+    height: 8em;
     border: 0.1px solid blueviolet;
     border-radius: 1.5em;
-
-}
-.title{
-    margin-top: -0.5em;
-    color: rgb(34, 32, 32);
-    font-size:1em;
-    width: 5em;
-}
-.movieCard2{
 
 }

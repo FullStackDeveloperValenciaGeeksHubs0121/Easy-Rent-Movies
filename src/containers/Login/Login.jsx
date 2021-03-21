@@ -19,7 +19,7 @@ const Login =(props)=>{
         
             <div className="Login">
                 <h2>¡Hola otra vez!</h2>
-                <p>Introduce tu email y tu contraseña para acceder al área de cliente y pedir cita.</p>
+                <p>Introduce tu email y tu contraseña para acceder al área de cliente y alquilar las peliculas.</p>
                 <div className="inputContainer">
                     <Form.Item  >
                         <FormInput label="Correo Electrónico" name="email"  maxLength="50"></FormInput>
