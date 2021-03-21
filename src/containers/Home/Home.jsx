@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom';
 //import {connect} from 'react-redux';
 import Header from '../../components/Header/Header';
 import './Home.scss';
-import axios from 'axios';
+
 
 const Home = (props)=>{
 
@@ -13,13 +13,12 @@ const Home = (props)=>{
    //Hooks
 
    const [movie,setMovie]= useState([])
-   const [video,setPopular]=useState([])
+ 
+
 
 useEffect(()=>{
 
 let LatestMoviesEndpoint = "https://api.themoviedb.org/3/movie/now_playing?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=1";
-let Popular = 'https://api.themoviedb.org/3/movie/popular?api_key=ef2edc9da61e81787a8079a7df721936&language=es.ES&page=1'
-
 
 
   fetch(LatestMoviesEndpoint)
@@ -29,23 +28,14 @@ let Popular = 'https://api.themoviedb.org/3/movie/popular?api_key=ef2edc9da61e81
      setMovie(data.results)
   })
 
-  fetch(Popular)
-  .then(res=> res.json())
-  .then(Data =>{
-     console.log(Data)
-     setPopular(Data.results)
-  })
+  
 
 },[]);
 
 //Functions:
 
-   const history = useHistory();
+   let history = useHistory();
    
-
- 
-
-
     
      return(
          

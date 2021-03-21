@@ -1,39 +1,58 @@
 .contaniner{
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display:flex ;
     flex-direction: column;
     background-color: rgb(68, 64, 64);
 
-       .contenido{
+       .contenidoUno{
            display: flex;
            flex-direction: row;
            width: 90%;
-           height: 100%;
+           height: auto;
            background-color: rgb(17, 16, 16);
            margin-left: 4em;
            justify-content: center;
            align-items: center;
+           border: 0.1em solid rgb(104, 100, 100);
 
            .showMovies{
+               margin-top: 1em;
                display: flex;
-               flex-direction: wrap;
+               flex-direction: row;
+               justify-content: center;
+               align-items: center;
+               flex-wrap: wrap;
                width: 68%;
-               height: 100%;
+               height:auto;
+            
+            
            }
-
-           .separador{
-               
-               height: 95%;
-               border: 1px rgb(189, 180, 180) solid;
-               
-           }
+               .separadorMovies{
+                width: 0.01em;
+                
+                height: 150em;
+                border: 0.01em rgb(110, 108, 108) solid;
+    
+                 }
+           
            .findMovies{
                display: flex;
                flex-direction: column;
-               width: 30%;
-               height: 100%;
+               width: 32%;
+               height: 100em;
+              // border: 0.01em solid rgb(104, 100, 100);
+               margin: 1em;
+               margin-top: -52em;
            }
+       }
+       .contenidoDos{
+
+        width: 100vw;
+        height: 30em;
+        background-color: rgb(68, 64, 64);
+
        }
 
 }
+
