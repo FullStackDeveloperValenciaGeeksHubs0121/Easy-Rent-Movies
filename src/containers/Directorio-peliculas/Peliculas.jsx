@@ -6,16 +6,18 @@ import Header from '../../components/Header/Header';
 import Movie from '../Movie/Movie';
 
 
+
 const Peliculas =()=>{
 
     
    
 
-    const [movie,setMovie] =useState([]);
+    const [popular,setPopular] =useState([]);
     const [latest,setLatest] =useState([]);
 
 
     useEffect(()=>{
+       
 
         let Popular = 'https://api.themoviedb.org/3/movie/popular?api_key=ef2edc9da61e81787a8079a7df721936&language=es.ES&page=1';
 
@@ -26,7 +28,7 @@ const Peliculas =()=>{
         fetch(Popular)
         .then(res=> res.json())
         .then(data=>{console.log(data)
-        setMovie(data.results)})
+        setPopular(data.results)})
 
       // latests
         
@@ -40,10 +42,10 @@ const Peliculas =()=>{
 
     let history=useHistory();
     const takeMeTo =(movie)=>{
-
      
-     
-     localStorage.setItem('movie',JSON.stringify(movie))
+       localStorage.setItem('movie',JSON.stringify(movie));
+       let LittleJson = JSON.parse(localStorage.getItem('movie'));
+       console.log(LittleJson);
   
     history.push('/movieProfile')
  }
@@ -52,10 +54,10 @@ const Peliculas =()=>{
     return(
 
         <div className="contaniner">
-            <Header/>
+            <Header style='style2'/>
             <div className="contenidoUno">
                 <div className="showMovies">
-                  {movie.map(movie=> <Movie key={movie.id} {...movie} onClick={()=>takeMeTo(movie)}/>)}  
+                  {popular.map(popular=> <Movie key={popular.id} {...popular} onClick={()=>takeMeTo(popular)}/>)}  
                 </div>
                 
             </div>

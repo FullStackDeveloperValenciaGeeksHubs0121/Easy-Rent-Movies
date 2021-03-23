@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react';
 import Movie from '../Movie/Movie';
 import {useHistory} from 'react-router-dom';
 //import '../../Global.scss';
-//import {connect} from 'react-redux';
+import {connect} from 'react-redux';
 import Header from '../../components/Header/Header';
 import './Home.scss';
 
@@ -12,20 +12,20 @@ const Home = (props)=>{
 
    //Hooks
 
-   const [movie,setMovie]= useState([])
+   const [latest,setLatest]= useState([])
  
 
 
 useEffect(()=>{
 
-let LatestMoviesEndpoint = "https://api.themoviedb.org/3/movie/now_playing?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=1";
+let Latest = "https://api.themoviedb.org/3/movie/now_playing?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US&page=1";
 
 
-  fetch(LatestMoviesEndpoint)
+  fetch(Latest)
   .then(res =>(res.json()))
   .then(data =>{
      console.log(data)
-     setMovie(data.results)
+     setLatest(data.results)
   })
 
   
@@ -35,9 +35,10 @@ let LatestMoviesEndpoint = "https://api.themoviedb.org/3/movie/now_playing?api_k
 //Functions:
 
    let history = useHistory();
-   const takeMeTo =(movie)=>{
+   
+   const takeMeTo =(latest)=>{
      
-      localStorage.setItem('movie',JSON.stringify(movie))
+      localStorage.setItem('latest',JSON.stringify(latest))
    
        setTimeout(()=>{history.push('/movieProfile')},500)
      
@@ -50,11 +51,11 @@ let LatestMoviesEndpoint = "https://api.themoviedb.org/3/movie/now_playing?api_k
         
         <div>
 
-           <Header/>
+           <Header style='style1'/>
            <div className="Contenedor">
                <div className="genero">
                 <div className="cardMovies">
-                {movie.map(movie=> <Movie key={movie.id} {...movie} onClick={()=>takeMeTo(movie)}/>)} 
+                {latest.map(latest=> <Movie key={latest.id} {...latest} onClick={()=>takeMeTo(latest)}/>)} 
                </div>
            </div>
 
@@ -80,4 +81,9 @@ let LatestMoviesEndpoint = "https://api.themoviedb.org/3/movie/now_playing?api_k
     
 }
 
-export default Home;
+const mapPropstoState=(state)=>{
+   return {
+      latest :state.latest
+   }
+}
+export default connect(mapPropstoState)(Home);

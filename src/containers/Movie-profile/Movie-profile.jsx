@@ -1,17 +1,53 @@
-import React from 'react';
+import React ,{useState,useEffect} from 'react';
 import Header from '../../components/Header/Header';
 import './Movie-profile.scss';
-
-
+import ReactPlayer from 'react-player'
+import Movie from '../Movie/Movie';
 
 const MProfile =()=>{
 
    let link ='https://image.tmdb.org/t/p/original';
-   
-   let datosMovie= JSON.parse(localStorage.getItem('movie'))
-   console.log(datosMovie)
-   
 
+   // same seria la variable que seteare con las peliculas relacionadas con el mismo genero
+
+   const [same,setSame] = useState([])
+   
+    let api_key ='ef2edc9da61e81787a8079a7df721936';
+    let endpointGenre ='https://api.themoviedb.org/3/movie/now_playing?api_key=ef2edc9da61e81787a8079a7df721936&language=en-US';
+
+    
+    let datosMovie= JSON.parse(localStorage.getItem('movie'))
+    let genre = datosMovie.genre_ids;
+    
+   
+    let arrayDepelicula=[];
+    useEffect(()=>{
+      
+        fetch(endpointGenre)
+        .then(res=>res.json())
+        .then(data=>{console.log(data.results)
+          let pelis=[]
+          console.log(pelis)
+          data.results.map(element=>{
+           
+            
+            if(element.genre_ids[0]  == genre[0] || element.genre_ids[0] == genre[1] || element.genre_ids[0] == genre[2]){
+         
+             // return localStorage.setItem('same',JSON.stringify(element))
+              pelis.push(element)
+              
+               
+            }
+            
+          })
+        setSame(pelis)
+        })
+    },[])
+   
+    
+     let sameMovie = JSON.parse(localStorage.getItem('same'))
+     
+     console.log(sameMovie)
 
     return(
 
@@ -20,8 +56,9 @@ const MProfile =()=>{
           <Header/>
           
           <div className="contenidoMProfile">
-         
-
+            <div className="same">
+                {same.map(same=> <Movie key= {same.id}  {...same} />)}
+            </div>
             <div className="movie">
             
               <div className="posterTitleRate">
@@ -53,7 +90,20 @@ const MProfile =()=>{
         
           </div>
           <div className="separadorProfile"></div>
-          <div className='peliculasRelacionadas'></div>
+          <div className='peliculasRelacionadas'>
+
+            <div className="derecha"><ReactPlayer
+          url='https://youtu.be/YptziB_s4l8'
+          className='react-player'
+          playing
+          width='100%'
+          height='100%'
+        /></div>
+        <div className="izquierda">
+          
+        </div>
+          
+          </div>
         </div>
     )
 }

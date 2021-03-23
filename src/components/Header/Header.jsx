@@ -5,9 +5,9 @@ import {useHistory} from 'react-router-dom';
 
 const Header = (props)=>{
     let history=useHistory();
-    let home=1;
+ 
 
-    if( home=== 1){
+    if( props.style == 'style1'){
 
         return(
               
@@ -32,7 +32,7 @@ const Header = (props)=>{
                 
             </div>
         )
-    }else{
+    }if(props.style == 'style2'){
 
      return(
 

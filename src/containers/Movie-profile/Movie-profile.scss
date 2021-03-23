@@ -6,7 +6,7 @@
 
     display: flex;
     flex-direction: column;
-    width: auto;
+    width: 100vw;
     height: auto;
     background-color: rgb(110, 103, 103);
 
@@ -14,21 +14,33 @@
 }
 .contenidoMProfile{
     width: 90vw;
-    height: 90vh;
+    height: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-   
+     align-items: center;
+     justify-content: space-evenly;
     border: 0.05em solid rgb(110, 106, 106);
     background-color: black;
     
 }
 // movie es el contedor de la informacion de la pelicula
-
+.same{
+    //border: 0.1em solid white;
+    width: 85vw;
+    height: 22em;
+    display: flex;
+    flex-direction: row;
+    
+    overflow-x: auto;
+    
+    
+}
 .movie{
-    position: relative;
+    
+    margin-top: -35em;
     width: 80vw;
-    height: 80vh;
+    height: 100em;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -146,9 +158,8 @@
     //height: 0.01em;
     border: 0.01em solid rgb(110, 103, 103);
 }
-.peliculasRelacionadas{
 
-    width: 90vw;
-    height: 60em;
-    background-color: black;
+.izquierda{
+    width: 40em;
+    height: auto;
 }
